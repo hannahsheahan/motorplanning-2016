@@ -1,17 +1,18 @@
 function  shadedTrajectory(x, y, colour, al)
-% x: [x means; x standard errors]
-% y: [y means; y standard errors]
-% colour: colour of patch
-% al: alpha transparency
-%all numbers should be positively offset
+% function:  [] = shadedTrajectory(x,y,colour,al)
+% Inputs:    x - [x means; x standard errors]
+%            y - [y means; y standard errors]
+%            colour - colour of patch
+%            al -  alpha transparency
+% Notes:  all trajectory values will be positively offset from zero
+% Author: Hannah Sheahan, sheahan.hannah@gmail.com
+% Year:   2016
 
-%offset all mean numbers by 1000 just in case
-
+%offset all mean numbers by 1000 to ensure they remain positive
 x(1,:) = x(1,:) + 1000;
 y(1,:) = y(1,:) + 1000;
 
 %figure();
-
  for i=1:size(x, 2)
     
      xlow(i) = x(1,i) - x(2,i);

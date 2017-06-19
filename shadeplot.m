@@ -2,17 +2,17 @@ function [Hp,Hs]=shadeplot(x,y,sd,linestyle,shadecolor,trans)
 % function [Hp,Hs]=shadeplot(x,y,sd,linestyle,shadecolor,trans)
 %
 % Plot x,y with shaded regions to indicate y +/- sd.
-%
 % x,y,sd - Vectors of identical length.
 % linestyle - Attributes as per standard plot function.
 % shadecolor - RGB vector for color of shaded region.
 % trans - transparancy of the shading
 % Returns handles to the plot (Hp) and shaded region (Hs).
 
-%Note that this function is not robust to NaN input. If your mean or SD measure
-%contains NaN values it will not plot the fill portion and will not give you an error message.
+% Notes: this function is not robust to NaN input. If your mean or SD measure
+%       contains NaN values it will not plot the fill portion and will not give you an error message.
+% Author: Wolpert-lab toolbox
 
-    k = 0;
+k = 0;
     for i=1:1:length(x)
         k = k + 1;
         X(k) = x(i);
